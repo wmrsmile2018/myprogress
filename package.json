@@ -1,0 +1,19 @@
+{
+  "name": "myprogress",
+  "version": "1.0.0",
+  "description": "here I will describe my achievements",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmrsmile2018/myprogress.git"
+  },
+  "author": "wmrsmile2018",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wmrsmile2018/myprogress/issues"
+  },
+  "homepage": "https://github.com/wmrsmile2018/myprogress#readme"
+}
