@@ -13,19 +13,22 @@ const config = {
   output: {
     path: path.resolve(__dirname, "dist"),
   },
+  devtool: isProduction ? "none" : "source-map",
   devServer: {
-    open: true,
+    open: false,
+    publicPath: "/",
+    historyApiFallback: true,
     host: "localhost",
+    port: 8080,
+    hot: !isProduction,
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: "public/index.html",
     }),
 
     new MiniCssExtractPlugin(),
-
-    // Add your plugins here
-    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
   module: {
     rules: [
@@ -46,9 +49,6 @@ const config = {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
       },
-
-      // Add your rules for custom modules here
-      // Learn more about loaders from https://webpack.js.org/loaders/
     ],
   },
   resolve: {
