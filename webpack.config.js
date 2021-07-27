@@ -3,7 +3,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -14,21 +13,23 @@ const config = {
   output: {
     path: path.resolve(__dirname, "dist"),
   },
-  devtool: isProduction ? 'none' : 'source-map',
   devServer: {
     open: true,
     host: "localhost",
-    port: 8080,
-    hot: !isProduction
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html",
+      template: "public/index.html",
     }),
+
     new MiniCssExtractPlugin(),
+
+    // Add your plugins here
+    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.(ts|tsx)$/i,
         loader: "ts-loader",
         exclude: ["/node_modules/"],
@@ -45,22 +46,42 @@ const config = {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
       },
+
+      // Add your rules for custom modules here
+      // Learn more about loaders from https://webpack.js.org/loaders/
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    alias: {
+      "@": path.resolve(__dirname, "./src/"),
+      "@src": path.resolve(__dirname, "./src/"),
+      // "@components": path.resolve(__dirname, "./src/components"),
+      "@DSComponents": path.resolve(__dirname, "./src/DSComponents"),
+      // "@styles": path.resolve(__dirname, "./src/styles/"),
+      // "@constants": path.resolve(__dirname, "./src/constants/"),
+      // "@redux": path.resolve(__dirname, "./src/redux"),
+      // "@utils": path.resolve(__dirname, "./src/utils"),
+      // "@images": path.resolve(__dirname, "./src/images"),
+    },
+    extensions: [
+      ".tsx",
+      ".ts",
+      ".js",
+      ".sass",
+      ".scss",
+      ".css",
+      ".wasm",
+      ".web.js",
+      ".mjs",
+      ".json",
+      ".web.jsx",
+    ],
   },
-  // externals: {
-  //   "react": "React",
-  //   "react-dom": "ReactDOM"
-  // },
 };
 
 module.exports = () => {
   if (isProduction) {
     config.mode = "production";
-
-    config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
   } else {
     config.mode = "development";
   }

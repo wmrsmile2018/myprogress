@@ -1,0 +1,117 @@
+@import "../../../styles/variables.scss";
+
+.right-panel {
+  position: relative;
+  display: flex;
+  // flex-direction: row;
+  // align-items: center;
+  color: white;
+  box-sizing: border-box;
+  height: 38px;
+  // width: 550px;
+  // margin-top: 14px;
+}
+
+.right-panel__notify-post {
+  height: 25px;
+  margin-top: 5px;
+  margin-right: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.right-panel__notifications {
+  margin-right: 60px;
+  height: 25px;
+  position: relative;
+  display: flex;
+  svg {
+    height: 25px;
+    width: 21px;
+    stroke: $color-white;
+  }
+}
+
+.right-panel__post-icon {
+  width: 30px;
+  height: 20px;
+  stroke: $color-white;
+}
+
+.right-panel__notifications-count {
+  font-size: 8px;
+  height: 12px;
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin-top: -3px;
+  margin-left: -9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-panel__user-info-container {
+  display: flex;
+  // align-items: center;
+}
+
+.right-panel__avatar-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  stroke: $color-white;
+
+  // width: 31px;
+  // height: 31px;
+  // margin-right: 9px;
+  // margin-top: 3px;
+}
+
+.right-panel__user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-panel__user-name,
+.right-panel__user-organization {
+  margin: 0;
+}
+.right-panel__user-name {
+  font-size: 16px;
+  line-height: 14px;
+  height: 15px;
+  margin-bottom: 4px;
+}
+.right-panel__user-organization {
+  line-height: 14px;
+  height: 13px;
+  font-size: 13px;
+  color: rgb(217, 217, 217);
+}
+
+.right-panel__exit {
+  cursor: pointer;
+  margin-left: auto;
+  display: flex;
+  margin-left: 46px;
+  align-items: center;
+
+  svg {
+    width: 23px;
+    height: 20px;
+    margin-right: 14px;
+    // margin-top: -2px;
+  }
+}
+
+.right-panel__exit > p {
+  margin: 0;
+  align-items: center;
+  display: flex;
+  height: 13px;
+  line-height: 14px;
+  margin-top: 1px;
+}

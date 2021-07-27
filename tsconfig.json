@@ -1,15 +1,22 @@
-
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "sourceMap": true,
-    "jsx": "react",
-    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
+    // "outDir": "./dist/",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
     "module": "es6",
     "target": "es5",
-    "allowJs": true
+    "allowJs": true,
+    "jsx": "react",
+    "baseUrl": "./src",
+    "paths": {
+      "@src": ["src"],
+      "@src/*": ["src/*"]
+    }
   },
-  "files": ["src/index.tsx", "./typings/index.d.ts",]
+  // "files": ["src/index.tsx"],
+  "include": ["./src/**/*"],
+  "exclude": ["node_modues"]
 }

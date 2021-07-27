@@ -1,0 +1,19 @@
+.radio-group {
+  display: flex;
+  flex-direction: column;
+
+  .radio-group__title {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
+
+  .radio-group-content {
+    display: flex;
+    flex-direction: column;
+
+    .radio-button {
+      margin-bottom: 12px;
+    }
+  }
+}

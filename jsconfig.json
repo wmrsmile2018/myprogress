@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    // "allowSyntheticDefaultImports": false,
+    "module": "commonjs",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@src/*": ["src/*"]
+      // "@components/*": ["src/components/*"],
+      // "@DSComponents/*": ["src/DSComponents/*"],
+      // "@styles/*": ["src/styles/*"],
+      // "@constants/*": ["src/constants/*"],
+      // "@redux/*": ["src/redux/*"],
+      // "@utils/*": ["src/utils/*"],
+      // "@images/*": ["src/image/*"]
+    }
+  },
+  "exclude": ["node_modules", "public"]
+}

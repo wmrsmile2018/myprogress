@@ -1,0 +1,62 @@
+@import "~@styles/variables.scss";
+
+.checkbox {
+  display: flex;
+  &.isLeft {
+    label {
+      margin-right: 5px;
+    }
+  }
+
+  &.isRight {
+    label {
+      margin-left: 5px;
+    }
+  }
+
+  label {
+    color: $color-dark-green;
+  }
+}
+
+.box {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  display: flex;
+  position: relative;
+  &.inactive {
+    transition: background-color 0.2s ease;
+    border: 1.5px solid $color-dark-green;
+    background: white;
+  }
+
+  &.active {
+    transition: background-color 0.2s ease;
+    border: 1.5px solid $color-dark-green;
+    background: $color-dark-green;
+  }
+
+  &:hover {
+    border-color: #78b8c3;
+  }
+
+  span {
+    position: absolute;
+    left: 1px;
+    top: 2px;
+    width: 12px;
+    height: 7px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    display: flex;
+  }
+  input {
+    display: none;
+  }
+}
