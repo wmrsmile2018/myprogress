@@ -1,5 +1,3 @@
-@import "~@styles/variables.scss";
-
 .checkbox {
   display: flex;
   &.isLeft {
@@ -15,7 +13,7 @@
   }
 
   label {
-    color: $color-dark-green;
+    color: #238495;
   }
 }
 
@@ -27,14 +25,14 @@
   position: relative;
   &.inactive {
     transition: background-color 0.2s ease;
-    border: 1.5px solid $color-dark-green;
+    border: 1.5px solid #238495;
     background: white;
   }
 
   &.active {
     transition: background-color 0.2s ease;
-    border: 1.5px solid $color-dark-green;
-    background: $color-dark-green;
+    border: 1.5px solid #238495;
+    background: #238495;
   }
 
   &:hover {

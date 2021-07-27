@@ -1,5 +1,3 @@
-@import "../../styles/variables.scss";
-
 .radio-button {
   width: 100%;
   display: flex;
@@ -82,19 +80,22 @@
   position: absolute;
   width: 13px;
   height: 13px;
-  border-radius: 50%;
   left: 1px;
   top: 1px;
+  border-radius: 50%;
   background-color: white;
   display: block;
   transition: background-color 0.3s;
 }
 
+.radio-button input[type="radio"] {
+  display: none;
+}
 .radio-button input[type="radio"]:checked + .radio-button__box::before {
-  width: 11px;
-  height: 11px;
-  left: 2px;
-  top: 2px;
+  width: 9px;
+  height: 9px;
+  left: 1px;
+  top: 1px;
   background-color: #0e7abf;
   border: 2px solid white;
 }

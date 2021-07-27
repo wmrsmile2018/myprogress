@@ -1,12 +1,28 @@
-import React, { useRef } from "react";
+import React, { useRef, useMemo } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
-import "./CheckBox.scss";
+import "./Checkbox.scss";
 
-const CheckBox = ({ className, isLeft, title, name, onChange, checked, value }) => {
+export const Checkbox = ({
+  className,
+  isLeft,
+  title,
+  name,
+  onChange,
+  checked,
+  value,
+  modificators,
+}) => {
+  const flag = useMemo(() => (checked ? "active" : "inactive"), []);
   const inputRef = useRef(null);
-  const classes = classNames("checkbox", className, { isLeft: isLeft }, { isRight: !isLeft });
+  const classes = classNames(
+    "checkbox",
+    { [`checkbox-${className}`]: className },
+    { isLeft: isLeft },
+    { isRight: !isLeft },
+    modificators,
+  );
 
   const handleOnClick = () => {
     inputRef.current.click();
@@ -16,29 +32,23 @@ const CheckBox = ({ className, isLeft, title, name, onChange, checked, value }) 
   //   onChange(!checked);
   // };
 
-  const handleOnChange = (evt) => {
-    onChange(evt);
-  };
+  // const handleOnChange = (evt) => {
+  //   onChange(evt);
+  // };
 
   return (
     <div className={classes}>
       {isLeft && <label htmlFor={name}>{title}</label>}
-      <div className={`box ${checked ? "active" : "inactive"}`} onClick={handleOnClick}>
+      <div className={`box ${flag}`} onClick={handleOnClick}>
         <span></span>
-        <input
-          type="checkbox"
-          checked={checked}
-          ref={inputRef}
-          onChange={handleOnChange}
-          value={value}
-        />
+        <input type="checkbox" checked={checked} ref={inputRef} onChange={onChange} value={value} />
       </div>
       {!isLeft && <label htmlFor={name}>{title}</label>}
     </div>
   );
 };
 
-CheckBox.propTypes = {
+Checkbox.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
   name: PropTypes.string,
@@ -46,15 +56,15 @@ CheckBox.propTypes = {
   checked: PropTypes.bool,
   onChange: PropTypes.func,
   value: PropTypes.string,
+  modificators: PropTypes.string,
 };
 
-CheckBox.defaultProps = {
+Checkbox.defaultProps = {
   className: "",
   title: "",
   name: "",
+  modificators: "",
   isLeft: false,
   checked: false,
   onChange: () => {},
 };
-
-export default CheckBox;

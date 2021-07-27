@@ -33,7 +33,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/i,
+        test: /\.(ts|tsx|js|jsx)$/i,
         loader: "ts-loader",
         exclude: ["/node_modules/"],
       },
@@ -56,7 +56,7 @@ const config = {
       "@": path.resolve(__dirname, "./src/"),
       "@src": path.resolve(__dirname, "./src/"),
       // "@components": path.resolve(__dirname, "./src/components"),
-      "@DSComponents": path.resolve(__dirname, "./src/DSComponents"),
+      "@dsComponents": path.resolve(__dirname, "./src/DSComponents"),
       // "@styles": path.resolve(__dirname, "./src/styles/"),
       // "@constants": path.resolve(__dirname, "./src/constants/"),
       // "@redux": path.resolve(__dirname, "./src/redux"),
@@ -67,6 +67,7 @@ const config = {
       ".tsx",
       ".ts",
       ".js",
+      ".jsx",
       ".sass",
       ".scss",
       ".css",
