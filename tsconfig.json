@@ -14,7 +14,8 @@
     "paths": {
       "@src": ["src"],
       "@src/*": ["src/*"],
-      "@dsComponents/*": ["src/DSComponents/*"]
+      "@components/*": ["src/components/*"],
+      "@components": ["src/components"]
     }
   },
   // "files": ["src/index.tsx"],

@@ -55,8 +55,8 @@ const config = {
     alias: {
       "@": path.resolve(__dirname, "./src/"),
       "@src": path.resolve(__dirname, "./src/"),
-      // "@components": path.resolve(__dirname, "./src/components"),
-      "@dsComponents": path.resolve(__dirname, "./src/DSComponents"),
+      "@components": path.resolve(__dirname, "./src/components/"),
+
       // "@styles": path.resolve(__dirname, "./src/styles/"),
       // "@constants": path.resolve(__dirname, "./src/constants/"),
       // "@redux": path.resolve(__dirname, "./src/redux"),
