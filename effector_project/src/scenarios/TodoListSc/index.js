@@ -1,1 +1,1 @@
-export { TodoSc } from './TodoSc';
+export { TodoSc } from './TodoListSc';
